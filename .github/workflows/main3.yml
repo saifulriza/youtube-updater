@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: WhoozyAction
         id: videoUpdater
-        uses: saifulriza/whoozy@v1.4
+        uses: saifulriza/whoozy@v1.5
         with:
           apiKey: ${{ secrets.ENV_API_KEY }}
           videoId: ${{ secrets.ENV_VIDEO_ID }}
