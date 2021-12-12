@@ -10,11 +10,11 @@ jobs:
     steps:
       - name: WhoozyAction
         id: videoUpdater
-        uses: saifulriza/whoozy@v1.5
+        uses: saifulriza/whoozy@v1.6
         with:
           apiKey: ${{ secrets.ENV_API_KEY }}
           videoId: ${{ secrets.ENV_VIDEO_ID }}
-          title: 'THIS VIDEO HAS BEEN WATCHED {counter} TIME. THIS SHOULD BE TRUE'
+          videoTitle: 'THIS VIDEO HAS BEEN WATCHED {counter} TIME. THIS SHOULD BE TRUE'
           counter: 'view'
           channelId: ${{ secrets.ENV_CHANNEL_ID }}
           refreshToken: ${{ secrets.ENV_REFRESH_TOKEN }}
