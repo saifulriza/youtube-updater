@@ -13,16 +13,13 @@ jobs:
     steps:
       - name: WhoozyAction
         id: videoUpdater
-        uses: saifulriza/whoozy@v1.6
+        uses: saifulriza/whoozy@v1.7
         with:
           apiKey: ${{ secrets.ENV_API_KEY }}
           videoId: ${{ secrets.ENV_VIDEO_ID }}
-          videoTitle: 'THIS VIDEO HAS BEEN WATCHED {counter} TIME. THIS SHOULD BE TRUE'
-          counter: 'view'
+          videoTitle: 'Internet of Thing | WATCH {watch} | LIKE {like} | DISLIKE {dislike} | COMMENT {comment} | SUBSCRIBE {subscribe}'
           channelId: ${{ secrets.ENV_CHANNEL_ID }}
           refreshToken: ${{ secrets.ENV_REFRESH_TOKEN }}
           clientSecret: ${{ secrets.ENV_CLIENT_SECRET }}
           redirectUri: ${{ secrets.ENV_REDIRECT_URI }}
           clientId: ${{ secrets.ENV_CLIENT_ID }}
-      - name: Get the output title
-        run: echo "The title was ${{ steps.videoUpdater.outputs.log }}"
