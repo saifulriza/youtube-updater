@@ -1,0 +1,23 @@
+name: "Video Updater"
+on: push
+  
+jobs:
+  video_updater_job:
+    runs-on: ubuntu-latest
+    name: A job to update video
+    steps:
+      - name: WhoozyAction
+        id: videoUpdater
+        uses: saifulriza/whoozy@v1.4
+        with:
+          apiKey: ${{ secrets.ENV_API_KEY }}
+          videoId: ${{ secrets.ENV_VIDEO_ID }}
+          title: 'THIS VIDEO HAS BEEN WATCHED {counter} TIME. THIS SHOULD BE TRUE'
+          counter: 'view'
+          channelId: ${{ secrets.ENV_CHANNEL_ID }}
+          refreshToken: ${{ secrets.ENV_REFRESH_TOKEN }}
+          clientSecret: ${{ secrets.ENV_CLIENT_SECRET }}
+          redirectUri: ${{ secrets.ENV_REDIRECT_URI }}
+          clientId: ${{ secrets.ENV_CLIENT_ID }}
+      - name: Get the output title
+        run: echo "The title was ${{ steps.videoUpdater.outputs.log }}"
